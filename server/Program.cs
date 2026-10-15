@@ -56,7 +56,7 @@ builder.Services.AddCors(options =>
                 "http://localhost:5175",
                 "http://localhost:3000",
                 "https://devshelf-7cxr949bc-thebigdriz.vercel.app",
-                "https://devshelf-git-main-thebigdriz.vercel.app",
+                "https://devshelf-git-main-thebigdriz.vercel.app"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
