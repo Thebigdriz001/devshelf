@@ -44,26 +44,6 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 // Add CORS to allow frontend requests
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowFrontend", policy =>
-    {
-        policy.WithOrigins(
-                  "http://localhost:5173",
-                  "http://localhost:5174",
-                  "http://localhost:5175",
-                  "http://localhost:3000"
-              )
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-});
-
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-builder.Services.AddControllers();
-builder.Services.AddAuthorization();
 
 builder.Services.AddCors(options =>
 {
@@ -71,13 +51,21 @@ builder.Services.AddCors(options =>
     {
         policy
             .WithOrigins(
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "http://localhost:5175",
+                "http://localhost:3000",
                 "https://devshelf-7cxr949bc-thebigdriz.vercel.app"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
 });
-
+// Add services to the container.
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+builder.Services.AddControllers();
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
