@@ -1,6 +1,6 @@
 import axios from 'axios';
 const api = axios.create({
-  baseURL: 'http://localhost:5259/api',
+  baseURL: 'https://devshelf-1.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
